@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Trading Dashboard</h1>
+        </header>
+
+        <div class="main-controls">
+            <button id="run-backtest-btn">Run Backtest</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="chart-container">
+                <h2>Equity Curve</h2>
+                <canvas id="equity-chart"></canvas>
+            </div>
+            <div class="metrics-container">
+                <h2>Performance Metrics</h2>
+                <div id="metrics"></div>
+            </div>
+        </div>
+
+        <div class="trades-container">
+            <h2>Trade Log</h2>
+            <table id="trades-table">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Symbol</th>
+                        <th>Side</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
