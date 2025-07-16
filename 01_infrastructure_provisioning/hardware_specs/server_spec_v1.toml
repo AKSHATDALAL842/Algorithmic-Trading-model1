@@ -1,0 +1,33 @@
+# Server Specification v1
+
+**Objective:** Define the server hardware for the HFT system. The primary optimization criterion is single-threaded performance and low memory latency, not core count.
+
+---
+
+## 1. CPU (Central Processing Unit)
+
+*   **Model:** Intel Core i9-14900K or AMD Ryzen 9 7950X3D.
+*   **Reasoning:** Prioritize the highest single-core clock speed and largest L3 cache available. The 3D V-Cache on the AMD model is a strong contender for its impact on reducing memory latency.
+*   **Configuration:** Disable hyper-threading in BIOS. Pin critical processes to specific cores to avoid context switching and ensure cache coherency.
+
+## 2. Motherboard
+
+*   **Chipset:** High-end chipset that supports the selected CPU and offers multiple PCIe Gen5 slots.
+*   **Features:** Must have robust power delivery (VRM) and minimal onboard peripherals to reduce potential sources of jitter.
+
+## 3. Memory (RAM)
+
+*   **Type:** DDR5 with the lowest possible latency (CL rating).
+*   **Capacity:** 32GB. Sufficient for the OS and execution processes without excessive overhead.
+*   **Configuration:** Run in a dual-channel configuration. Ensure memory timings are manually tuned in BIOS for optimal performance.
+
+## 4. Storage
+
+*   **Type:** NVMe M.2 SSD (Gen5).
+*   **Capacity:** 1TB.
+*   **Usage:** For the operating system and logging. Not used for real-time data processing.
+
+## 5. Chassis & Cooling
+
+*   **Form Factor:** 2U or 4U rackmount.
+*   **Cooling:** High-performance air or liquid cooling to prevent thermal throttling under load.

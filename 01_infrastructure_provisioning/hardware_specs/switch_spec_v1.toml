@@ -1,0 +1,22 @@
+# Switch Specification v1
+
+**Objective:** Select a network switch with the lowest possible port-to-port latency.
+
+---
+
+## 1. Switch
+
+*   **Vendor:** Arista.
+*   **Series:** 7130 Series (formerly Metamako).
+*   **Reasoning:** These are not just switches; they are layer 1 matrix switches combined with FPGAs. They offer the absolute lowest latency by allowing for direct physical layer connections between ports. The integrated FPGA allows for running custom logic for tapping, aggregation, and filtering directly on the switch.
+
+## 2. Alternative
+
+*   **Vendor:** Mellanox (NVIDIA).
+*   **Series:** SN-series switches.
+*   **Reasoning:** A strong alternative known for low-latency performance, though the Arista 7130 is generally considered the top tier for HFT.
+
+## 3. Configuration
+
+*   **Mode:** Cut-through switching.
+*   **Features:** Disable all non-essential features (e.g., Spanning Tree Protocol, LACP) to reduce processing overhead and jitter.

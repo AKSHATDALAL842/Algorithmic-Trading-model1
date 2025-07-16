@@ -1,0 +1,23 @@
+# Network Interface Card (NIC) Specification v1
+
+**Objective:** Select a NIC that minimizes network latency by bypassing the kernel's networking stack.
+
+---
+
+## 1. Primary NIC
+
+*   **Vendor:** Solarflare (now AMD Solarflare).
+*   **Model:** XtremeScale X2 series (e.g., X2522).
+*   **Reasoning:** Industry standard for ultra-low latency. Onload kernel bypass allows applications to send and receive data directly from the NIC, avoiding the high-latency OS network stack.
+
+## 2. Secondary NIC (for PTP)
+
+*   **Vendor:** Mellanox (now NVIDIA Mellanox).
+*   **Model:** ConnectX-6 Dx.
+*   **Reasoning:** Excellent PTP hardware timestamping capabilities, which is critical for accurate event sequencing and backtesting.
+
+## 3. Key Features
+
+*   **Kernel Bypass:** Onload (Solarflare) or equivalent.
+*   **PTP Support:** Hardware timestamping for IEEE 1588.
+*   **PCIe:** Gen4 or higher to ensure sufficient bandwidth to the host system.
